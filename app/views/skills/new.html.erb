@@ -1,0 +1,7 @@
+<h1>Skill a ajouter<h1>
+​
+<%= simple_form_for [@user, @skill] do |f| %>
+    <%= f.input :name, collection: Skill::SKILLS %>
+    <%= f.input :price, label: "Price in $" %>
+    <%= f.button :submit %>
+  <% end %>
