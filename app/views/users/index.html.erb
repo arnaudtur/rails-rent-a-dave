@@ -1,0 +1,17 @@
+<h1 class="text-center">Users</h1>
+
+
+
+  <div class="container col-8 mt-5">
+    <div class="card-columns">
+      <% @users.each do |user| %>
+        <div class="card mr-2 mt-2" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to user.name, user_path(user) %></h5>
+            <p class="card-text"><%= user.email %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+  </div>

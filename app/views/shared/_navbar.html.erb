@@ -1,7 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% if !user_signed_in? %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
+  <% else %>
+    <%= link_to user_root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% end %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,12 +16,21 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+      <% if !user_signed_in? %>
+       <li class="nav-item active">
+          <div class="d-flex flex-row-reverse">
+          <%= link_to 'Home', root_path, class: "nav-link" %>
+          <%= link_to 'sign-in', user_session_path, class: "nav-link" %> 
+          </div>
+        </li>
+      <% elsif user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <div class="d-flex flex-row-reverse">
+            <%= link_to 'Back to users', users_path, class:"nav-link" %>
+            <%= link_to 'Back to skills', skills_path, class:"nav-link" %>
+          </div> 
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
