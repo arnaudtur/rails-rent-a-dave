@@ -1,0 +1,20 @@
+<h1 class="text-center">Skills</h1>
+
+
+
+  <div class="container col-8 mt-5">
+    <div class="card-columns">
+      <% @skills.each do |skill| %>
+        <div class="card mr-2 mt-2" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to skill.name, skill_path(skill) %></h5>
+            <p class="card-text"><%= skill.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path %>
+</ul>
