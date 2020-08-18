@@ -3,6 +3,6 @@ class Skill < ApplicationRecord
   belongs_to :user
   validates :name, presence: true 
   validates :name, inclusion: { in: ["Python","Java","Ruby/Ruby on rails","HTML","Javascript","C","C++","C#","PHP","SQL","Swift","CSS","Visual Basic","Product Management","R","R++"],
-    message: "%{value} is not a valid size" }
+    message: "%{value} is not in the list" }
   validates :price, presence: true, numericality: true
 end

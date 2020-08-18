@@ -4,16 +4,23 @@ class SkillsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @skill = Skill.new
   end
 
   def create
+    @user = current_user
     @skill = Skill.new (skill_params)
+    @skill.user = @user
     if @skill.save
       redirect_to @skill
     else
-      render :new
+      render :index
     end
+  end
+
+  def show
+    @skill = Skill.find(params[:id])
   end
 
   private
