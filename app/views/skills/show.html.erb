@@ -1,7 +1,9 @@
-<p class="h1"><%= User.find(@skill.user_id).name %></p>
-<h4><%= @skill.name%><h4>
-<br><br>
-<h4><%= @skill.price%><span>$</span></h4>
+<p class="h1">Skill <%= @skill.name%> </p>
+<h4>of <%= User.find(@skill.user_id).name %><h4>
+<h4>Price : <%= @skill.price%><span>$</span></h4>
+
+<h5>Reviews</h5>
+<h5>Book Me</h5>
 
 
 <% if policy(@skill).destroy? %>
