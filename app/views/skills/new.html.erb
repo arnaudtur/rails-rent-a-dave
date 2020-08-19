@@ -1,7 +1,18 @@
-<h1>Skill a ajouter<h1>
-​
-<%= simple_form_for @skill do |f| %>
-    <%= f.input :name, collection: Skill::SKILLS %>
-    <%= f.input :price, label: "Price in $" %>
-    <%= f.button :submit %>
-  <% end %>
+<div class ="new_skill_container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="add-container">
+        <h2 class = "title">Add a new skill</h2>
+        <div class="form-input">
+        <%= simple_form_for @skill do |f| %>
+            <%= f.input :name, collection: Skill::SKILLS %>
+            <%= f.input :price, label: "Price in $" %>
+        </div>
+        <div class="form-actions d-flex justify-content-center">
+            <%= f.button :submit, class: "button_add" %>
+        </div>
+       <% end %>
+        </div>
+      </div>
+</div>
+</div>

@@ -8,6 +8,25 @@
 <html>
   <body>
 
+    <div class="wrapperI">
+      <div class="headerI">
+        <section class="hero__content hero__content--centered">
+          <h2 class="hero__title">Find the skill that could fit your project</h2>
+        </section>
+      </div>
+
+      <h4 class="text-left">
+        More than
+              <% cards_count = 0 %>
+              <% @skills.each do |skill| %>
+                <%cards_count += 1 %>
+                <%end%>
+                <%=  cards_count%> developpers
+        are renting their coding skills
+      </h4>
+      <div class="container-list">
+            <% @skills.each do |skill| %>
+
 
 
     <h1 class="text-center">Skills</h1>
@@ -53,10 +72,6 @@ typed.addEventListener("keyup", (event) => {
 
   </div>
   <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
-
-
-
-
   </body>
 </html>
 
