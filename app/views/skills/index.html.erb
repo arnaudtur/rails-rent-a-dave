@@ -1,9 +1,37 @@
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
 <html>
   <body>
+
+
+
     <h1 class="text-center">Skills</h1>
+    <div class="container">
+    <div class="row searchFilter" >
+     <div class="col-sm-12" >
+      <div class="input-group" >
+       <input id="table_filter" type="text" class="form-control" >
+</div>
+         <div class="button">
+<script type="text/javascript">
+let typed = document.querySelector("#table_filter");
+typed.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  typed.value;
+});
 
+</script>
 
-
+<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>           
+         </div>
+      </div>
+    </div>
+  </div>
 
   <div class="container-list">
      <div class="cards-list">
@@ -24,6 +52,12 @@
     <% end %>
 
   </div>
-      <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+
+
+
+
   </body>
 </html>
+
+

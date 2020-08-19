@@ -1,6 +1,12 @@
 class SkillsController < ApplicationController
   def index
     @skills = Skill.all
+    #binding.pry
+    if params[:name] && params[:name] != ""
+      @skills = Skill.where(:name => params[:name])
+    else
+      @skills = Skill.all
+    end
   end
 
   def new
