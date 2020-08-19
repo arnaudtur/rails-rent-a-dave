@@ -18,7 +18,6 @@
       </h4>
       <div class="container-list">
             <% @skills.each do |skill| %>
-
               <div class="card-container">
                 <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
                 <h3><%= link_to skill.name, skill_path(skill) %></h3>
