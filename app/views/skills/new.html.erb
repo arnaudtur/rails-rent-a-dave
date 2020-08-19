@@ -7,11 +7,9 @@
         <%= simple_form_for @skill do |f| %>
             <%= f.input :name, collection: Skill::SKILLS %>
             <%= f.input :price, label: "Price in $" %>
+            <%= f.button :submit, class: "button-user" %>
+          <%end%>
         </div>
-        <div class="form-actions d-flex justify-content-center">
-            <%= f.button :submit, class: "button_add" %>
-        </div>
-       <% end %>
         </div>
       </div>
 </div>
