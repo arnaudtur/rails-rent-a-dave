@@ -1,17 +1,37 @@
-<h1 class="text-center">Users</h1>
-
-
-
-  <div class="container col-8 mt-5">
-    <div class="card-columns">
+<div class="wrapperI">
+  <div class="headerI">
+    <section class="hero__content hero__content--centered">
+      <h2 class="hero__title">Find the developper that could fit in   your project</h2>
+    </section>
+  </div>
+  <div class="container-list1">
       <% @users.each do |user| %>
-        <div class="card mr-2 mt-2" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to user.name, user_path(user) %></h5>
-            <p class="card-text"><%= user.email %></p>
+        <div class="card-container1">
+          <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user">
+          <h3><%= link_to user.name, user_path(user) %></h3>
+          <h6>Paris</h6>
+          <p>⭐⭐⭐⭐⭐</p>
+          <div class="buttons">
+                <div class="buttons">
+                  <button class="primary ghost">
+                   See Profile
+                  </button>
+                </div>
+            <div class="skills">
+                  <h6>Skills</h6>
+                  <ul>
+                    <li>UI / UX</li>
+                    <li>Front End Development</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node</li>
+                  </ul>
+            </div>
           </div>
-        </div>
       <% end %>
     </div>
+
   <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </div>

@@ -25,7 +25,8 @@
         are renting their coding skills
       </h4>
       <div class="container-list">
-            <% @skills.each do |skill| %>
+     
+
 
 
 
@@ -48,27 +49,24 @@ typed.addEventListener("keyup", (event) => {
 
 <%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>           
          </div>
+
       </div>
     </div>
   </div>
-
-  <div class="container-list">
-     <div class="cards-list">
-        <% @skills.each do |skill| %>
-          <div class="card-container">
-            <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-            <h3><%= link_to skill.name, skill_path(skill) %></h3>
-            <h6>⭐⭐⭐⭐⭐</h6>
-            <h6>By <%= link_to skill.name, skill_path(skill) %></h6>
-            <p><%= skill.price %><span>$</span></p>
-            <div class="buttons">
-              <button class="primary ghost">
-                See Skills
-              </button>
-            </div>
-          </div>
-    </div>
-    <% end %>
+       <% @skills.each do |skill| %>
+              <div class="card-container">
+                <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+                <h3><%= link_to skill.name, skill_path(skill) %></h3>
+                <h6>⭐⭐⭐⭐⭐</h6>
+                <h6>By <%= link_to User.find(skill.user_id).name, user_path(skill.user_id) %></h6>
+                <p><%= skill.price %><span>$</span></p>
+                <div class="buttons">
+                  <button class="primary ghost">
+                    <%= link_to skill.name, skill_path(skill), class:"button primary ghost" %>
+                  </button>
+                </div>
+              </div>
+        <% end %>
 
   </div>
   <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
