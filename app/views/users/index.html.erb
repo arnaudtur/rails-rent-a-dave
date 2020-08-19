@@ -1,8 +1,30 @@
 <div class="wrapperI">
   <div class="headerI">
-    <section class="hero__content hero__content--centered">
-      <h2 class="hero__title">Find the developper that could fit in   your project</h2>
-    </section>
+        <section class="hero__content hero__content--centered">
+          <h2 class="hero__title">Find the developer that could fit your project</h2>
+              <div class="container">
+    <div class="row searchFilter" >
+     <div class="col-sm-12" >
+      <div class="input-group" >
+       <input id="table_filter" type="text" class="form-control" >
+</div>
+         <div class="button">
+<script type="text/javascript">
+let typed = document.querySelector("#table_filter");
+typed.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  typed.value;
+});
+
+</script>
+
+<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>
+         </div>
+
+      </div>
+    </div>
+  </div>
+        </section>
   </div>
   <div class="container-list1">
       <% @users.each do |user| %>
@@ -30,8 +52,6 @@
                   </ul>
             </div>
           </div>
+        </div>
       <% end %>
-    </div>
-
-  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </div>

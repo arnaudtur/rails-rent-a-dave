@@ -12,26 +12,7 @@
       <div class="headerI">
         <section class="hero__content hero__content--centered">
           <h2 class="hero__title">Find the skill that could fit your project</h2>
-        </section>
-      </div>
-
-      <h4 class="text-left">
-        More than
-              <% cards_count = 0 %>
-              <% @skills.each do |skill| %>
-                <%cards_count += 1 %>
-                <%end%>
-                <%=  cards_count%> developpers
-        are renting their coding skills
-      </h4>
-      <div class="container-list">
-     
-
-
-
-
-    <h1 class="text-center">Skills</h1>
-    <div class="container">
+              <div class="container">
     <div class="row searchFilter" >
      <div class="col-sm-12" >
       <div class="input-group" >
@@ -47,12 +28,28 @@ typed.addEventListener("keyup", (event) => {
 
 </script>
 
-<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>           
+<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>
          </div>
 
       </div>
     </div>
   </div>
+        </section>
+      </div>
+
+
+      <h4 class="text-align">
+        More than
+              <% cards_count = 0 %>
+              <% @skills.each do |skill| %>
+                <%cards_count += 1 %>
+                <%end%>
+                <%=  cards_count%> developpers
+        are renting their coding skills
+      </h4>
+      <div class="container-list">
+
+
        <% @skills.each do |skill| %>
               <div class="card-container">
                 <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
@@ -62,7 +59,7 @@ typed.addEventListener("keyup", (event) => {
                 <p><%= skill.price %><span>$</span></p>
                 <div class="buttons">
                   <button class="primary ghost">
-                    <%= link_to skill.name, skill_path(skill), class:"button primary ghost" %>
+                    <%= link_to "Book this skill", skill_path(skill), class:"button primary ghost" %>
                   </button>
                 </div>
               </div>
