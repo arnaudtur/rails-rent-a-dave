@@ -53,12 +53,14 @@
               <% @skills.each do |skill| %>
                 <%cards_count += 1 %>
                 <%end%>
-                <%=  cards_count%> developpers
-        are renting their coding skills
+                <%=  cards_count%> skills available from our Daves
+
       </h4>
       <div class="container-list">
 
+
   <%= render partial: "cards", locals: {skills: @skills} %>
+
   </div>
   <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </body>

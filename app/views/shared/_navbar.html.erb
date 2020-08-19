@@ -1,14 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <% if !user_signed_in? %>
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg" %>
     <% end %>
   <% else %>
     <%= link_to users_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg" %>
     <% end %>
   <% end %>
-
+I need a Dave in my Project !
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,14 +19,14 @@
       <% if !user_signed_in? %>
        <li class="nav-item active">
           <div class="d-flex flex-row-reverse">
-            <%= link_to 'Sign-in', user_session_path, class: "nav-link" %> 
+            <%= link_to 'Sign-in', user_session_path, class: "nav-link" %>
           </div>
         </li>
       <% elsif user_signed_in? %>
         <li class="nav-item active">
           <div class="d-flex flex-row-reverse">
             <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
-          </div> 
+          </div>
         </li>
         <li class="nav-item">
         </li>
