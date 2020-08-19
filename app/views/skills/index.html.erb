@@ -19,16 +19,25 @@
        <input id="table_filter" type="text" class="form-control" >
 </div>
          <div class="button">
-<script type="text/javascript">
-let typed = document.querySelector("#table_filter");
-typed.addEventListener("keyup", (event) => {
-  event.preventDefault();
-  typed.value;
-});
-
+        <script type="text/javascript">
+          let typed = document.querySelector("#table_filter");
+          typed.addEventListener("keyup", (event) => {
+          event.preventDefault();
+          console.log(typed.value);
+          let token = $('meta[name="csrf-token"]').attr('content');
+          console.log(token)
+          jQuery.ajax({
+            url: `/skills?name=${typed.value}`,
+            type: 'GET',
+            headers: {
+              accept: '*/*',
+              'X-CSRF-Token': token
+            }
+          });
+        });
 </script>
 
-<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>
+<%= link_to "Skilled_Dave(s).search", skills_path(:name => params[:name]), class:"btn btn-secondary btn-search", id:"skillsearch" %>
          </div>
 
       </div>
@@ -50,22 +59,7 @@ typed.addEventListener("keyup", (event) => {
       <div class="container-list">
 
 
-       <% @skills.each do |skill| %>
-              <div class="card-container">
-                <img class="round" src="https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg" alt="user" />
-                <h3><%= link_to skill.name, skill_path(skill) %></h3>
-                <h6>⭐⭐⭐⭐⭐</h6>
-                <h6>By <%= link_to User.find(skill.user_id).name, user_path(skill.user_id) %></h6>
-                <p><%= skill.price %><span>$</span></p>
-                <div class="buttons">
-                  <%= link_to skill_path(skill) do%>
-                  <button class="primary ghost">
-                    Book this Skill
-                  </button>
-                  <% end %>
-                </div>
-              </div>
-        <% end %>
+  <%= render partial: "cards", locals: {skills: @skills} %>
 
   </div>
   <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>

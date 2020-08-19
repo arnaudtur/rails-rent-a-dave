@@ -7,12 +7,13 @@
 
 
 <% if policy(@skill).destroy? %>
-  <%= link_to "Edit", edit_skill_path %> |
+  <%= link_to "Edit",  edit_skill_path, class:"btn btn-primary" %> |
   <%= link_to "Delete #{@skill.name}",
             skill_path(@skill),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" },
+            class:"btn btn-primary" %> |
 <% end %>
-</br>
-
-<%= link_to 'Back', skills_path %>
+<%= link_to "Check his bookings Xpldr", skill_bookings_path(@skill.id), class:"btn btn-primary" %> |
+<%= link_to "Book this Dave",  new_skill_booking_path(@skill.id), class:"btn btn-primary" %> |
+<%= link_to "I go to checkout other Daves",  skills_path, class:"btn btn-primary" %>
