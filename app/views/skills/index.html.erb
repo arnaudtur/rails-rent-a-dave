@@ -1,26 +1,38 @@
 <html>
   <body>
-    <h1 class="text-center">Skills</h1>
+    <div class="wrapperI">
+      <div class="headerI">
+        <section class="hero__content hero__content--centered">
+          <h2 class="hero__title">Find the skill that could fit your project</h2>
+        </section>
+      </div>
 
+      <h3 class="text-left">
+              <% cards_count = 0 %>
+              <% @skills.each do |skill| %>
+                <%cards_count += 1 %>
+                <%end%>
+                <%=  cards_count%>
+                skills to rent
+      </h3>
+      <div class="container-list">
+            <% @skills.each do |skill| %>
 
-
-
-  <div class="container-list">
-        <% @skills.each do |skill| %>
-          <div class="card-container">
-            <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-            <h3><%= link_to skill.name, skill_path(skill) %></h3>
-            <h6>⭐⭐⭐⭐⭐</h6>
-            <h6>By <%= link_to skill.name, skill_path(skill) %></h6>
-            <p><%= skill.price %><span>$</span></p>
-            <div class="buttons">
-              <button class="primary ghost">
-                See Skills
-              </button>
-            </div>
-          </div>
-    <% end %>
-  </div>
+              <div class="card-container">
+                <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+                <h3><%= link_to skill.name, skill_path(skill) %></h3>
+                <h6>⭐⭐⭐⭐⭐</h6>
+                <h6>By <%= link_to skill.name, skill_path(skill) %></h6>
+                <p><%= skill.price %><span>$</span></p>
+                <div class="buttons">
+                  <button class="primary ghost">
+                    See Skills
+                  </button>
+                </div>
+              </div>
+        <% end %>
+      </div>
       <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+    </div>
   </body>
 </html>
