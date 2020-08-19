@@ -1,3 +1,322 @@
-.buttoms_user {
-  margin-top: 80px;
+
+
+
+  button {
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  }
+  input {
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 1.825em;
+    margin-bottom: 30px;
+    line-height: 1.4em;
+  }
+  h4 {
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.45em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  h5 {
+    font-weight: 400;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+  }
+  a {
+    color: #f96332;
+    &:hover {
+      color: #f96332;
+    }
+    &:focus {
+      color: #f96332;
+    }
+  }
+  .h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  .h3 {
+    font-size: 1.825em;
+    margin-bottom: 30px;
+    line-height: 1.4em;
+  }
+  .h4 {
+    font-size: 1.5em;
+    line-height: 1.45em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  h4+.category {
+    margin-top: -5px;
+  }
+  h4.title+.category {
+    margin-top: -5px;
+  }
+  .h4+.category {
+    margin-top: -5px;
+  }
+  .h4.title+.category {
+    margin-top: -5px;
+  }
+  .h5 {
+    font-size: 1.3em;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+  }
+  h5.category {
+    font-weight: 400;
+  }
+  .h5.category {
+    font-weight: 400;
+  }
+  p {
+    line-height: 1.61em;
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+  .title {
+    font-weight: 700;
+    padding-top: 30px;
+  }
+  .title+.category {
+    margin-top: -25px;
+  }
+  .description {
+    color: #9A9A9A;
+    font-weight: 300;
+  }
+  .category {
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #9A9A9A;
+  }
+  body {
+    color: #2c2c2c;
+    font-size: 14px;
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 1px;
+  }
+  .img-raised {
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-page {
+    .wrapper {
+    }
+    .page-header {
+      min-height: 550px;
+      &:before {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .photo-container {
+      width: 123px;
+      height: 123px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    }
+    .title {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .description {
+      text-align: center;
+    }
+    .category {
+      text-align: center;
+    }
+    h5.description {
+      max-width: 700px;
+      margin: 20px auto 75px;
+    }
+    .nav-align-center {
+      margin-top: 30px;
+    }
+    .content {
+      max-width: 450px;
+      margin: 0 auto;
+      .social-description {
+        display: inline-block;
+        max-width: 150px;
+        width: 145px;
+        text-align: center;
+        margin: 15px 0 0px;
+        h2 {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .button-container {
+      text-align: center;
+      margin-top: -106px;
+    }
+    .collections {
+      img {
+        margin-bottom: 30px;
+      }
+    }
+    .gallery {
+      margin-top: 45px;
+      padding-bottom: 50px;
+    }
+  }
+  .section {
+    padding: 70px 0;
+    position: relative;
+    background: #FFFFFF;
+    .row+.category {
+      margin-top: 15px;
+    }
+  }
+  .page-header {
+    min-height: 100vh;
+    max-height: 999px;
+    padding: 0;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    >.content {
+      margin-top: 12%;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    &:before {
+      background-color: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      content: "";
+    }
+    >.container {
+      z-index: 2;
+      padding-top: 12vh;
+      padding-bottom: 40px;
+    }
+    .page-header-image {
+      position: absolute;
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .container {
+      height: 100%;
+      z-index: 1;
+      text-align: center;
+      position: relative;
+    }
+    .category {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .description {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    &:after {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      content: "";
+    }
+  }
+  .clear-filter {
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .clear-filter[filter-color="orange"] {
+    background: rgba(44, 44, 44, 0.2);
+    background: -webkit-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+    background: -o-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+    background: -moz-linear-gradient(90deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+    background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+  }
+  [data-background-color="orange"] {
+    background-color: #e95e38;
+  }
+  [data-background-color="black"] {
+    background-color: #2c2c2c;
+  }
+  [data-background-color] {
+    &:not([data-background-color="gray"]) {
+      color: #FFFFFF;
+      .title {
+        color: #FFFFFF;
+      }
+      .social-description {
+        h2 {
+          color: #FFFFFF;
+        }
+        p {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      p {
+        color: #FFFFFF;
+      }
+      h2 {
+        color: #FFFFFF;
+      }
+      h3 {
+        color: #FFFFFF;
+      }
+      h4 {
+        color: #FFFFFF;
+      }
+      h5 {
+        color: #FFFFFF;
+      }
+      a {
+        &:not(.btn) {
+          &:not(.dropdown-item) {
+            color: #FFFFFF;
+          }
+        }
+      }
+      .description {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
 }
+
