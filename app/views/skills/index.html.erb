@@ -6,7 +6,6 @@
 
 
   <div class="container-list">
-     <div class="cards-list">
         <% @skills.each do |skill| %>
           <div class="card-container">
             <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
@@ -20,9 +19,7 @@
               </button>
             </div>
           </div>
-    </div>
     <% end %>
-
   </div>
       <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </body>
