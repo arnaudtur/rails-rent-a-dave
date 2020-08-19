@@ -1,17 +1,29 @@
-<h1 class="text-center">Skills</h1>
+<html>
+  <body>
+    <h1 class="text-center">Skills</h1>
 
 
 
-  <div class="container col-8 mt-5">
-    <div class="card-columns">
-      <% @skills.each do |skill| %>
-        <div class="card mr-2 mt-2" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to skill.name, skill_path(skill) %></h5>
-            <p class="card-text"><%= skill.price %><span>$</span></p>
+
+  <div class="container-list">
+     <div class="cards-list">
+        <% @skills.each do |skill| %>
+          <div class="card-container">
+            <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+            <h3><%= link_to skill.name, skill_path(skill) %></h3>
+            <h6>⭐⭐⭐⭐⭐</h6>
+            <h6>By <%= link_to skill.name, skill_path(skill) %></h6>
+            <p><%= skill.price %><span>$</span></p>
+            <div class="buttons">
+              <button class="primary ghost">
+                See Skills
+              </button>
+            </div>
           </div>
-        </div>
-      <% end %>
     </div>
-  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+    <% end %>
+
   </div>
+      <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
+  </body>
+</html>

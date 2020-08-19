@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+h3 {
+  margin: 10px 0;
+}
+h6 {
+  margin: 5px -5px;
+  text-transform: uppercase;
+}
+.card-container {
+  background-color: #231E39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+  color: #B3B8CD;
+  padding-top: 15px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+  height: 200px;
+  .round {
+    border: 1px solid #03BFCB;
+    border-radius: 50%;
+    height: 80px;
+    padding: 7px;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  p {
+    margin: 8px;
+  }
+  body {
+    background-color: #28223F;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+}
+button.primary {
+  background-color: #03BFCB;
+  border: 1px solid #03BFCB;
+  border-radius: 3px;
+  color: #231E39;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  padding: 10px 25px;
+}
+button.primary.ghost {
+  background-color: transparent;
+  color: #02899C;
+}
+
