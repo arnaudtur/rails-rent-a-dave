@@ -1,10 +1,31 @@
-<p class="h1"><%= @user.name %></p>
-<h4><%= @user.name%><h4>
+<p class="h1">Profile of <%= @user.name %></p>
 <br><br>
-<h4><%= @user.email%></h4>
+<h2>Availables Skills</h2>
+<!-- <h4><%= @user.email%></h4> -->
 
 
 
+<div class="card-deck ">
+
+
+       <% @user.skills.each do |skill| %>
+              <div class="card-container ">
+                <h3><%= link_to skill.name, skill_path(skill) %></h3>
+                <h6>⭐⭐⭐⭐⭐</h6>
+                <p><%= skill.price %><span>$</span></p>
+                <div class="buttons">
+                  <%= link_to skill_path(skill) do%>
+                  <button class="primary ghost">
+                    <%= skill.name %>
+                  </button>
+                  <% end %>
+                </div>
+              </div>
+        <% end %>
+
+</div>
+
+<!--
 <%@user.skills.each do |skill|%>
 <%if skill.user_id == @user.id %>
   <div class="card-body">
@@ -12,9 +33,11 @@
     <p class="card-text"><%=skill.price%></p>
   </div>
 <%end%>
-<%end%>
+<%end%> -->
 
 <div class="d-flex flex-row">
 <%= link_to 'Back to users', users_path, class:"btn btn-primary" %>
 <%= link_to 'Back to skills', skills_path, class:"btn btn-primary" %>
 </div>
+
+

@@ -40,12 +40,12 @@ typed.addEventListener("keyup", (event) => {
 
       <h4 class="text-align">
         More than
-              <% cards_count = 0 %>
+              <% cards_count = -2 %>
               <% @skills.each do |skill| %>
                 <%cards_count += 1 %>
                 <%end%>
-                <%=  cards_count%> developpers
-        are renting their coding skills
+                <%=  cards_count%> skills available from our Daves
+
       </h4>
       <div class="container-list">
 
@@ -58,9 +58,11 @@ typed.addEventListener("keyup", (event) => {
                 <h6>By <%= link_to User.find(skill.user_id).name, user_path(skill.user_id) %></h6>
                 <p><%= skill.price %><span>$</span></p>
                 <div class="buttons">
+                  <%= link_to skill_path(skill) do%>
                   <button class="primary ghost">
-                    <%= link_to "Book this skill", skill_path(skill), class:"button primary ghost" %>
+                    <%= skill.name %>
                   </button>
+                  <% end %>
                 </div>
               </div>
         <% end %>

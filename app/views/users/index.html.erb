@@ -34,11 +34,11 @@ typed.addEventListener("keyup", (event) => {
           <h6>Paris</h6>
           <p>⭐⭐⭐⭐⭐</p>
           <div class="buttons">
-                <div class="buttons">
-                  <button class="primary ghost">
-                   See Profile
-                  </button>
-                </div>
+            <%= link_to user_path(user) do%>
+            <button class="primary ghost">
+              See Profile
+            </button>
+            <% end %>
             <div class="skills">
                   <h6>Skills</h6>
                   <ul>
