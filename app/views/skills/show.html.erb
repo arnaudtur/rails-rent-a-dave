@@ -2,4 +2,15 @@
 <h4><%= @skill.name%><h4>
 <br><br>
 <h4><%= @skill.price%><span>$</span></h4>
-<%= link_to 'Back', skills_path %> |
+
+
+<% if policy(@skill).destroy? %>
+  <%= link_to "Edit", edit_skill_path %> |
+  <%= link_to "Delete #{@skill.name}",
+            skill_path(@skill),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<% end %>
+</br>
+
+<%= link_to 'Back', skills_path %>

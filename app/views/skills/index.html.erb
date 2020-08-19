@@ -1,5 +1,13 @@
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
 <html>
   <body>
+
     <div class="wrapperI">
       <div class="headerI">
         <section class="hero__content hero__content--centered">
@@ -17,7 +25,35 @@
         are renting their coding skills
       </h4>
       <div class="container-list">
-            <% @skills.each do |skill| %>
+     
+
+
+
+
+    <h1 class="text-center">Skills</h1>
+    <div class="container">
+    <div class="row searchFilter" >
+     <div class="col-sm-12" >
+      <div class="input-group" >
+       <input id="table_filter" type="text" class="form-control" >
+</div>
+         <div class="button">
+<script type="text/javascript">
+let typed = document.querySelector("#table_filter");
+typed.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  typed.value;
+});
+
+</script>
+
+<%= link_to "Skilled_Dave(s).search", skills_path(:name => ""), class:"btn btn-secondary btn-search", id:"skillsearch" %>           
+         </div>
+
+      </div>
+    </div>
+  </div>
+       <% @skills.each do |skill| %>
               <div class="card-container">
                 <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
                 <h3><%= link_to skill.name, skill_path(skill) %></h3>
@@ -31,8 +67,10 @@
                 </div>
               </div>
         <% end %>
-      </div>
-      <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
-    </div>
+
+  </div>
+  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </body>
 </html>
+
+
