@@ -1,6 +1,15 @@
 class SkillsController < ApplicationController
   def index
     @skills = policy_scope(Skill)
+    #binding.pry
+    if params[:name] && params[:name] != ""
+      @skills = Skill.where(:name => params[:name])
+    else
+    @skills = policy_scope(Skill)
+    end
+
+
+
   end
 
   def new
