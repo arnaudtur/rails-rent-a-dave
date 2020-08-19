@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   get '/user' => "skills#index", :as => :user_root
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :skills, only: [:index, :new, :create, :update, :show, :destroy, :edit]
+  resources :skills, only: [:index, :new, :create, :update, :show, :destroy, :edit] do
+    resources :bookings, only: [:index, :new, :create, :update, :show, :destroy, :edit]
+  end
+  
   resources :users, only: [:index, :update, :show]
-
-
+  
 end

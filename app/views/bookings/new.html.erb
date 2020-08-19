@@ -1,6 +1,9 @@
 <h1>BIENVENU<h1>
-​
-<%= simple_form_for (@booking) do |f| %>
-  <%= f.association :name %>
-  <%= f.button :submit %>
+​<%= simple_form_for @booking, url: skill_bookings_path(@skill), method: :post do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :status %>
+    <div class="form-actions d-flex justify-content-center">
+      <%= f.button :submit, class: "button_add" %>
+    </div>
 <% end %>
