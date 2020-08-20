@@ -46,7 +46,7 @@
         </section>
       </div>
 
-
+    <div class="ml-5">
       <h4 class="text-align">
         More than
               <% cards_count = 0 %>
@@ -56,13 +56,13 @@
                 <%=  cards_count%> skills available from our Daves
 
       </h4>
+    </div>
       <div class="container-list">
 
 
   <%= render partial: "cards", locals: {skills: @skills} %>
 
   </div>
-  <%= link_to "Add a new skill you learned (BTW congrats)",  new_skill_path, class:"btn btn-primary" %>
   </body>
 </html>
 

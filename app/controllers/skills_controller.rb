@@ -31,6 +31,8 @@ class SkillsController < ApplicationController
 
   def show
     @skill = Skill.find(params[:id])
+    @booking = Booking.new
+    authorize @booking
     authorize @skill
   end
 
