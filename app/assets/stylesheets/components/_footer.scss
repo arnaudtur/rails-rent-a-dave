@@ -1,35 +1,45 @@
-.footer {
+footer {
   background-color: black;
   color: white;
   height: 90px;
+  border-top: 7px solid #204051;
 }
 
-.fa-facebook-square {
+.fa-facebook-f {
+  font-size: 20px;
+}
+
+.fa-facebook-f:hover {
   color: white;
   font-size: 20px;
 }
 
-.fa-facebook-square:hover {
-  color: pink;
+.fa-twitter {
   font-size: 20px;
 }
 
-.fa-twitter-square {
+.fa-twitter:hover {
   color: white;
   font-size: 20px;
 }
 
-.fa-twitter-square:hover {
-  color: pink;
+.fa-google-plus-g {
   font-size: 20px;
 }
 
-.fa-linkedin {
+.fa-google-plus-g:hover {
   color: white;
   font-size: 20px;
 }
 
-.fa-linkedin:hover {
-  color: pink;
+.fa-linkedin-in {
   font-size: 20px;
 }
+
+.fa-linkedin-in:hover {
+  color: white;
+  font-size: 20px;
+}
+
+
+

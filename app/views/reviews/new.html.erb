@@ -1,0 +1,20 @@
+<div class ="new_skill_container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="add-container">
+        <h2 class = "title">Add a review for this booking</h2>
+        <div class="form-input">
+        <%= simple_form_for @review, url: skill_booking_reviews_path do |f| %>
+            <%= f.input :content %>
+            <%= f.input :rating  %>
+            <%= f.button :submit, class: "button-user" %>
+          <%end%>
+        </div>
+        </div>
+      </div>
+</div>
+</div>
+
+
+
+@review, url: skill_bookings_path(@skill)
