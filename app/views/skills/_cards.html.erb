@@ -1,14 +1,17 @@
 <% skills.each do |skill| %>
-<div class="card-container">
-<img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
-<h3><%= link_to skill.name, skill_path(skill) %></h3>
-<h6>⭐⭐⭐⭐⭐</h6>
-<h6>By <%= link_to User.find(skill.user_id).name, user_path(skill.user_id) %></h6>
-<p><%= skill.price %><span>$</span></p>
-<div class="buttons">
-<button class="primary ghost">
-<%= link_to "Book this skill", skill_path(skill), class:"button primary ghost" %>
-</button>
-</div>
-</div>
+  <div class="card-container">
+    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+    <h3><%= link_to skill.name, skill_path(skill) %></h3>
+    <h6>⭐⭐⭐⭐⭐</h6>
+    <h6>By <%= link_to User.find(skill.user_id).name, user_path(skill.user_id) %></h6>
+    <p><%= skill.price %><span>$</span></p>
+    <%= link_to skill_path(skill) do%>
+    <div class="buttons">
+      <button class="primary ghost">
+        Book Now
+      </button>
+      <% end %>
+
+    </div>
+  </div>
 <% end %>

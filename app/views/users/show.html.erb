@@ -42,17 +42,17 @@
                   <div class="card-deck ">
                     <% @user.skills.each do |skill| %>
                            <div class="card-container m-2 ">
-                             <h3><%= link_to skill.name, skill_path(skill) %></h3>
+                           <%= link_to skill_path(skill) do%>
+                             <h3><%=skill.name%></h3>
                              <h6>⭐⭐⭐⭐⭐</h6>
                              <p><%= skill.price %><span>$</span></p>
                              <div class="buttons">
-                               <%= link_to skill_path(skill) do%>
                                <button class="primary ghost">
                                  Book this Skill
                                </button>
-                               <% end %>
                              </div>
                            </div>
+                           <% end %>
                      <% end %>
                   </div>
                 </div>

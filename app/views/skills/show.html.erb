@@ -1,19 +1,29 @@
-<p class="h1">Skill <%= @skill.name%> </p>
-<h4>of <%= User.find(@skill.user_id).name %><h4>
-<h4>Price : <%= @skill.price%><span>$</span></h4>
 
-<h5>Reviews</h5>
-<h5>Book Me</h5>
+<h1>BIENVENU<h1>
+ <div class="container text-center">
+  <div class="w-50 ml-auto mr-auto">
+  ​<%= simple_form_for @booking, url: skill_bookings_path(@skill.id), method: :post do |f| %>
+   <div class="d-flex flex-row justify-content-around align-items-center">
+    <%= f.input :start_date, as: :string, input_html: {type: :date} %>
+    <%= f.input :end_date, as: :string, input_html: {type: :date} %>
+   </div>
+    <%= f.input :status, collection: Booking::STATUS %>
+      <div class="form-actions d-flex justify-content-center">
+        <%= f.button :submit, class: "button_add" %>
+      </div>
+  <% end %>
+  </div>
+  <% if policy(@skill).destroy? %>
+    <%= link_to "Edit",  edit_skill_path, class:"btn btn-primary" %> |
+    <%= link_to "Delete #{@skill.name}",
+              skill_path(@skill),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class:"btn btn-primary" %> |
+  <% end %>
+  <%= link_to "Check his bookings Xpldr", skill_bookings_path(@skill.id), class:"btn btn-primary " %> |
+  <%= link_to "Book this Dave",  new_skill_booking_path(@skill.id), class:"btn btn-primary" %> |
+  <%= link_to "I go to checkout other Daves",  skills_path, class:"btn btn-primary" %>
 
+ </div>
 
-<% if policy(@skill).destroy? %>
-  <%= link_to "Edit",  edit_skill_path, class:"btn btn-primary" %> |
-  <%= link_to "Delete #{@skill.name}",
-            skill_path(@skill),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class:"btn btn-primary" %> |
-<% end %>
-<%= link_to "Check his bookings Xpldr", skill_bookings_path(@skill.id), class:"btn btn-primary" %> |
-<%= link_to "Book this Dave",  new_skill_booking_path(@skill.id), class:"btn btn-primary" %> |
-<%= link_to "I go to checkout other Daves",  skills_path, class:"btn btn-primary" %>

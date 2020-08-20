@@ -4,7 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #GEM PERSO MIGHT BUG
 gem 'validates_timeliness', '~> 5.0.0.beta1'
 
-
 ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

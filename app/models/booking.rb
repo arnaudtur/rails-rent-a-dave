@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  STATUS = ["Pending", "Canceled", "Done", "Accepted"]
   belongs_to :user
   belongs_to :skill
   validates :start_date, presence: true
