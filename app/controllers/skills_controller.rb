@@ -1,8 +1,8 @@
 class SkillsController < ApplicationController
   def index
     @skills = policy_scope(Skill)
-    if params[:name]
-      @skills = Skill.where(:name => params[:name])
+    if params[:name].present?
+      @skills = Skill.where("name Ilike ?", "%#{params[:name]}%")
     else
       @skills = policy_scope(Skill)
     end
