@@ -1,8 +1,4 @@
 
-
- <!DOCTYPE html>
- <html lang="en">
- <body>
   <div id="booking" class="section">
     <div class="section-center">
       <div class="text-center" style="padding-top: 50px;">
@@ -13,7 +9,11 @@
             <div class="booking-cta">
               <h3>Your Dave: <%= @skill.user.name%> is a master in <%= @skill.name%></h3>
               <h2><%= price = (@skill.price)%>$ / Day</h2>
-              <p>review</p>
+                <p><% @skill.bookings.each do |booking| %>
+                  <h6>"<%= booking.review.content %>"</h6>
+                    <%= "⭐️"*booking.review.rating %>
+                  <%end%>
+                </p>
             </div>
           </div>
           <div class="col-md-4 col-md-pull-7">
@@ -34,18 +34,3 @@
       </div>
     </div>
   </div>
- </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
-
-
-<h1>Here are all your reviews</h1>
-
-<% @skill.bookings.each do |booking| %>
-<div class="card">
-  <div class="card-body">
-    <h6>Review: <%= booking.review.content %></h6>
-    <p>Start date: <%= booking.review.rating%></p>
-
-  </div>
-</div>
-<% end %>
