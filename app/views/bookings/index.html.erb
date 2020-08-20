@@ -1,7 +1,9 @@
-<h1>Here are all your bookings</h1>
-
+<h1>Here are all the bookings</h1>
 <% @bookings.each do |booking| %>
-<div class="card">
+
+  
+  <%if booking.user_id == params[:user_id].to_i%>
+  <div class="card">
   <div class="card-body">
     <h6>Status: <%= booking.status %></h6>
     <p>Start date: <%= booking.start_date%></p>
@@ -11,4 +13,9 @@
   <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
   </div>
 </div>
+
+    <%else%>
+    <%end%>
+
 <% end %>
+

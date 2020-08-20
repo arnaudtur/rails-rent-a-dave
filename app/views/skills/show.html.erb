@@ -1,7 +1,17 @@
 
-  <div id="booking" class="section">
-    <div class="section-center">
-      <div class="text-center" style="padding-top: 50px;">
+
+<h1>BIENVENU<h1>
+ <div class="container text-center">
+  <div class="w-50 ml-auto mr-auto">
+  ​<%= simple_form_for @booking, url: skill_bookings_path(@skill.id), method: :post do |f| %>
+   <div class="d-flex flex-row justify-content-around align-items-center">
+    <%= f.input :start_date, as: :string, input_html: {type: :date}, id:"start-date" %>
+    <%= f.input :end_date, as: :string, input_html: {type: :date}, id:"end-date" %>
+   </div>
+    <%= f.input :status, collection: Booking::STATUS %>
+      <div class="form-actions d-flex justify-content-center">
+        <%= f.button :submit, class: "button_add" %>
+
       </div>
       <div class="container" style="padding-top: 100px;">
         <div class="row">
@@ -9,7 +19,11 @@
             <div class="booking-cta">
               <h3>Your Dave: <%= @skill.user.name%> is a master in <%= @skill.name%></h3>
               <h2><%= price = (@skill.price)%>$ / Day</h2>
-              <p>review</p>
+                <p><% @skill.bookings.each do |booking| %>
+                  <h6>"<%= booking.review.content %>"</h6>
+                    <%= "⭐️"*booking.review.rating %>
+                  <%end%>
+                </p>
             </div>
           </div>
           <div class="col-md-4 col-md-pull-7">
@@ -30,6 +44,7 @@
       </div>
     </div>
   </div>
+
   <h1>Here are all your reviews</h1>
   <% @skill.bookings.each do |booking| %>
   <div class="card">
@@ -39,3 +54,4 @@
     </div>
   </div>
   <% end %>
+

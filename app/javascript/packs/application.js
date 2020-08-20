@@ -23,39 +23,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-
-// JavaScript code
-function search_skills() {
-  let input = document.getElementById('table_filter').value
-  input=input.toLowerCase();
-  let x = document.getElementsByClassName('name');
-
-  for (i = 0; i < x.length; i++) {
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].style.display="none";
-      }
-      else {
-          x[i].style.display="list-item";
-      }
-  }
-}
-
-//The display of the typed.js (pimp front)
 import { loadDynamicBannerText } from '../components/banner';
-
+import { fullPrice } from '../components/full_price';
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   loadDynamicBannerText();
+  fullPrice();
 });
 
 $(document).ready(function() {

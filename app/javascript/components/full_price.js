@@ -1,0 +1,5 @@
+const fullPrice = () => {
+
+  }
+
+export {fullPrice};

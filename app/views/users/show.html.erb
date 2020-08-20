@@ -1,11 +1,85 @@
-
-
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 
 
 <body class="profile-page sidebar-collapse">
+<% if @user == current_user %>
+<div class="wrapper"  style="background-image: url('https://www.terdav.com/Content/img/HC/LR_V5/Activite_Environnement/96.jpg")>
+      <div class="container">
+        <div class="photo-container">
+          <img src=https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg alt="">
+        </div>
+        <h3 class="title"><%= @user.name%></h3>
+        <div class="content">
+          <div class="social-description">
+            <h2>0</h2>
+            <p>Missions</p>
+          </div>
+          <div class="social-description">
+            <h2>0</h2>
+            <p>Reviews</p>
+          </div>
+          <div class="social-description">
+            <h2><% skill_counter = 0 %>
+                <% offer_counter = 0 %>
+                <% current_user.skills.each do |number|%>
+                <%skill_counter += 1%>
+                <%end%>
+                <% current_user.bookings.each do |booking|%>
+                <% offer_counter += 1 %>
+                <%end%>   
+                <%= skill_counter %>
+             </h2>
+            <p>Work offers</p>
+          </div>
+          <div class="social-description">
+            <h2><%=offer_counter%></h2> 
+            <p>Bookings</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <h4 class="title text-center"><%= link_to "New Skill to Offer",  new_skill_path, class:"btn btn-primary" %></h4>
+            <div class="nav-align-center">
+            </div>
+          </div>
+          <!-- Tab panes -->
+          <div class="container">
+             <div class="row justify-content-center">
+              <div class="col-12 col-lg-8">
+                  <div class="card-deck ">
+                    <% @user.skills.each do |skill| %>
+                           <div class="card-container m-2 ">
+                           <%= link_to skill_path(skill) do%>
+                             <h3><%=skill.name%></h3>
+                             <h6>⭐⭐⭐⭐⭐</h6>
+                             <p><%= skill.price %><span>$</span></p>
+                             <div class="buttons">
+                               <button class="primary ghost">
+                                 Book this Skill
+                               </button>
+                             </div>
+                           </div>
+                           <% end %>
+                     <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+<%else%>
+
   <div class="wrapper"  style="background-image: url('https://www.terdav.com/Content/img/HC/LR_V5/Activite_Environnement/96.jpg")>
       <div class="container">
         <div class="photo-container">
@@ -22,8 +96,21 @@
             <p>Reviews</p>
           </div>
           <div class="social-description">
-            <h2>48</h2>
-            <p>Offers</p>
+            <h2><% skill_counter = 0 %>
+                <% offer_counter = 0 %>
+                <% @user.skills.each do |skill|%>
+                <% skill_counter += 1 %>
+                <%end%>
+                <% @user.bookings.each do |booking|%>
+                <% offer_counter += 1 %>
+                <%end%>  
+                <%= skill_counter %>
+             </h2>
+            <p>Skills to offer</p>
+          </div>
+            <div class="social-description">
+              <h2><%= offer_counter %></h2>
+              <p>Works done</p>
           </div>
         </div>
       </div>
@@ -61,6 +148,7 @@
         </div>
       </div>
   </div>
+<%end%>
 
   <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
