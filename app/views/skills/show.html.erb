@@ -1,8 +1,4 @@
 
-
- <!DOCTYPE html>
- <html lang="en">
- <body>
   <div id="booking" class="section">
     <div class="section-center">
       <div class="text-center" style="padding-top: 50px;">
@@ -34,18 +30,12 @@
       </div>
     </div>
   </div>
- </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
-
-
-
-<h1>Here are all your reviews</h1>
-
-<% @skill.bookings.each do |booking| %>
-<div class="card">
-  <div class="card-body">
-    <h6>Review: <%= booking.review.content %></h6>
-    <p>Start date: <%= booking.review.rating%></p>
-
+  <h1>Here are all your reviews</h1>
+  <% @skill.bookings.each do |booking| %>
+  <div class="card">
+    <div class="card-body">
+      <h6>Review: <%= booking.review.content %></h6>
+      <p>Start date: <%= booking.review.rating%></p>
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
