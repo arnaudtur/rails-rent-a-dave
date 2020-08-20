@@ -4,8 +4,8 @@
   <div class="w-50 ml-auto mr-auto">
   ​<%= simple_form_for @booking, url: skill_bookings_path(@skill.id), method: :post do |f| %>
    <div class="d-flex flex-row justify-content-around align-items-center">
-    <%= f.input :start_date, as: :string, input_html: {type: :date} %>
-    <%= f.input :end_date, as: :string, input_html: {type: :date} %>
+    <%= f.input :start_date, as: :string, input_html: {type: :date}, id:"start-date" %>
+    <%= f.input :end_date, as: :string, input_html: {type: :date}, id:"end-date" %>
    </div>
     <%= f.input :status, collection: Booking::STATUS %>
       <div class="form-actions d-flex justify-content-center">

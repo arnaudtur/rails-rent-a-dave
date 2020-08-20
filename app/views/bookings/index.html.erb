@@ -1,7 +1,9 @@
-<h1>Here are all your bookings</h1>
-
+<h1>Here are all the bookings</h1>
 <% @bookings.each do |booking| %>
-<div class="card">
+
+  
+  <%if booking.user_id == params[:user_id].to_i%>
+  <div class="card">
   <div class="card-body">
     <h6>Status: <%= booking.status %></h6>
     <p>Start date: <%= booking.start_date%></p>
@@ -10,4 +12,7 @@
     <p>Language: <%= booking.skill.name %></p>
   </div>
 </div>
+    <%else%>
+    <%end%>
+
 <% end %>
