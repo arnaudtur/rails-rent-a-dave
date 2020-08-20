@@ -31,6 +31,7 @@ nav {
       position: fixed;
       width: 100%;
       line-height: 60px;
+      z-index: 10;
 }
 
 nav ul {
@@ -38,6 +39,7 @@ nav ul {
       list-style: none;
       background: rgba(0, 0, 0, 0);
       overflow: hidden;
+      z-index: 10;
       padding: 0;
       text-align: right;
       margin: 0;
@@ -51,7 +53,9 @@ nav.black ul {
 
 nav ul li {
       display: inline-block;
-      padding: 16px 40px;;
+      padding: 16px 40px;
+      z-index: 10;
+
 }
 
 nav ul li a {
@@ -81,6 +85,7 @@ nav ul li a {
       nav ul {
             max-height: 0px;
             background: #000;
+            z-index: 10;
       }
 
       nav.black ul {
@@ -96,6 +101,8 @@ nav ul li a {
             width: 100%;
             padding: 24px;
             text-align: center;
+
+
       }
 
       .menu-icon {
