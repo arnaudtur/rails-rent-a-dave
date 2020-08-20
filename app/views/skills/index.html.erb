@@ -11,40 +11,24 @@
     <div class="wrapperI">
       <div class="headerI">
         <section class="hero__content hero__content--centered">
-          <h2 class="hero__title">Find the skill that could fit your project</h2>
+          <p>
+            <span id="banner-typed-text"></span>
+          </p>
               <div class="container">
-    <div class="row searchFilter" >
-     <div class="col-sm-12" >
-      <div class="input-group" >
-       <input id="table_filter" type="text" class="form-control" >
+    
+<%= form_tag skills_path, method: :get do %>
+  <%= text_field_tag :name,
+    params[:name],
+    class: "form-control",
+    placeholder: "Dave.where(Skill==search)"
+  %>
+<%= submit_tag "Skilled_Dave(s).search", class:"btn btn-secondary btn-search" %>
+<% end %>
+
+
 </div>
-         <div class="button">
-        <script type="text/javascript">
-          let typed = document.querySelector("#table_filter");
-          typed.addEventListener("keyup", (event) => {
-          event.preventDefault();
-          console.log(typed.value);
-          let token = $('meta[name="csrf-token"]').attr('content');
-          console.log(token)
-          jQuery.ajax({
-            url: `/skills?name=${typed.value}`,
-            type: 'GET',
-            headers: {
-              accept: '*/*',
-              'X-CSRF-Token': token
-            }
-          });
-        });
-</script>
-
-<%= link_to "Skilled_Dave(s).search", skills_path(:name => params[:name]), class:"btn btn-secondary btn-search", id:"skillsearch" %>
-         </div>
-
-      </div>
-    </div>
-  </div>
-        </section>
-      </div>
+</section>
+</div>
 
 
       <h4 class="text-align">

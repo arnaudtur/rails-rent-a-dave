@@ -50,3 +50,12 @@ function search_skills() {
   } 
 }
 
+//The display of the typed.js (pimp front)
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});
+
