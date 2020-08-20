@@ -13,16 +13,15 @@
   font-size: 1rem;
   border-radius: .25rem;
   transition: all .2s ease-in-out;
-
   &.btn-primary {
     color: #fff;
-    background-color: #000;
-    border-color: #666;
-
+    background-color: #333;
+    border: solid #ff5722;
+    opacity: 0.8;
     &:hover {
-      color: #fff;
-      background-color: #333;
-      border-color: #666;
+      color: #333;
+      background-color: #ff5722;
+      border: solid #ff5722;
     }
   }
 }
