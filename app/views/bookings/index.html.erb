@@ -1,7 +1,7 @@
-<h1>Here are all the bookings</h1>
-<% @bookings.each do |booking| %>
 
-  
+<h4>Bookings</h4>
+
+<% @bookings.each do |booking| %>
   <%if booking.user_id == params[:user_id].to_i%>
   <div class="card">
   <div class="card-body">
@@ -13,9 +13,23 @@
   <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
   </div>
 </div>
-
     <%else%>
     <%end%>
-
 <% end %>
 
+
+<% @bookings.each do |booking| %>
+  <%if booking.skill_id == params[:skill_id].to_i%>
+  <div class="card">
+  <div class="card-body">
+    <h6>Status: <%= booking.status %></h6>
+    <p>Start date: <%= booking.start_date%></p>
+    <p>End date: <%= booking.end_date %></p>
+    <p>Price: <%= booking.skill.price %></p>
+    <p>Language: <%= booking.skill.name %></p>
+  <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+  </div>
+</div>
+    <%else%>
+    <%end%>
+<% end %>
