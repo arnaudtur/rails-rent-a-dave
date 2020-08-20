@@ -17,3 +17,19 @@
 <%= link_to "Check his bookings Xpldr", skill_bookings_path(@skill.id), class:"btn btn-primary" %> |
 <%= link_to "Book this Dave",  new_skill_booking_path(@skill.id), class:"btn btn-primary" %> |
 <%= link_to "I go to checkout other Daves",  skills_path, class:"btn btn-primary" %>
+
+
+<h1>Here are all your review</h1>
+
+<% @bookings.each do |reviews| %>
+<div class="card">
+  <div class="card-body">
+    <h6>Status: <%= review.content %></h6>
+    <p>Start date: <%= booking.start_date%></p>
+    <p>End date: <%= booking.end_date %></p>
+    <p>Price: <%= booking.skill.price %></p>
+    <p>Language: <%= booking.skill.name %></p>
+  <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+  </div>
+</div>
+<% end %>
