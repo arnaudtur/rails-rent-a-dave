@@ -1,47 +1,40 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <% if !user_signed_in? %>
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg" %>
-    <% end %>
-  <% else %>
-    <%= link_to users_path, class: "navbar-brand" do %>
-      <%= image_tag "https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg" %>
-    <% end %>
-  <% end %>
-I need a Dave in my Project !
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if !user_signed_in? %>
-       <li class="nav-item active">
-          <div class="d-flex flex-row-reverse">
-            <%= link_to 'Sign-in', user_session_path, class: "nav-link" %>
-          </div>
-        </li>
-      <% elsif user_signed_in? %>
-        <li class="nav-item active">
-          <div class="d-flex flex-row-reverse">
-            <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
-          </div>
-        </li>
-        <li class="nav-item">
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
-
-  </div>
-</div>
+<nav>
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+               <div class="logo">
+                  <% if !user_signed_in? %>
+                    <%= link_to root_path, class: "navbar-brand" do %>
+                      Rent a Dave
+                    <% end %>
+                  <% else %>
+                    <%= link_to users_path, class: "navbar-brand" do %>
+                      Rent a Dave
+                    <% end %>
+                  <% end %>
+               </div>
+               <div class="menu">
+                  <ul>
+                    <% if !user_signed_in? %>
+                     <li class="nav-item active">
+                        <div class="d-flex flex-row-reverse">
+                          <%= link_to 'Sign-in', user_session_path, class: "nav-link" %>
+                        </div>
+                      </li>
+                    <% elsif user_signed_in? %>
+                      <li class="nav-item active">
+                        <div class="d-flex flex-row-reverse">
+                          <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <%= link_to "Log out", destroy_user_session_path, method: :delete%>
+                      </li>
+                    <% else %>
+                      <li class="nav-item">
+                        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                      </li>
+                    <% end %>
+                  </ul>
+               </div>
+            </nav>
