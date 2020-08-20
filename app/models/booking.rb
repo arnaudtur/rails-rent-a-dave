@@ -20,9 +20,9 @@ class Booking < ApplicationRecord
 
   def available_date
     skill.bookings.each do |confirmed_booking|
-            unless (start_date < confirmed_booking.start_date && end_date < confirmed_booking.start_date) ||
-             (start_date > confirmed_booking.end_date && end_date > confirmed_booking.end_date)
-        record.errors.add(attribute, "not available")
+      unless (start_date <= confirmed_booking.start_date && end_date <= confirmed_booking.start_date) ||
+        (start_date >= confirmed_booking.end_date && end_date >= confirmed_booking.end_date)
+        errors.add(:start_date, "not available")
       end
     end
   end
