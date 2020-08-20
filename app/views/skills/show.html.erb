@@ -8,7 +8,12 @@
           <div class="col-md-7 col-md-push-5">
             <div class="booking-cta">
               <h3>Your Dave: <%= @skill.user.name%> is a master in <%= @skill.name%></h3>
+              <% if @skill.bookings.exists?%>
+              <h3>Average rating : <%= "⭐️"*(@skill.average_rating / @skill.bookings.length) %> after <%= @skill.bookings.length %> missions</h3>
+              <% end %>
               <h2><%= price = (@skill.price)%>$ / Day</h2>
+              <h2></h2>
+
 
 
             </div>
@@ -31,5 +36,8 @@
       </div>
     </div>
   </div>
+
+
+
 
 
