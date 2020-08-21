@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
       @booking = Booking.new(params_bookings)
       @booking.skill = Skill.find(params[:skill_id])
       @booking.user = current_user
+      @booking.status = ("Pending")
       authorize @booking
       if @booking.save
         redirect_to user_path(current_user.id)

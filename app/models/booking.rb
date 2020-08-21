@@ -5,7 +5,6 @@ class Booking < ApplicationRecord
   has_one :review
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :status, presence: true
   validate :end_date_after_start_date
 
   private
