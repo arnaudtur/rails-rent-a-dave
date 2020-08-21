@@ -118,9 +118,130 @@ s  button {
   }
 
   .profile-page {
+    background-image: url(https://images.hdqwalls.com/wallpapers/synthwave-sun-mountains-4k-op.jpg);
+    background-size: cover;
     .wrapper {
       background-size: cover;
       background-position: 50% 33%;
+      color: white;
+    }
+    button {
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    }
+    input {
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    h3 {
+      font-weight: 400;
+      font-size: 1.825em;
+      margin-bottom: 30px;
+      line-height: 1.4em;
+    }
+    h4 {
+      font-weight: 400;
+      font-size: 1.5em;
+      line-height: 1.45em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h5 {
+      font-weight: 400;
+      font-size: 1.3em;
+      line-height: 1.4em;
+      margin-bottom: 15px;
+    }
+    a {
+      color: #f96332;
+      text-decoration: none;
+
+      &:hover {
+        color: #f96332;
+        text-decoration: none;
+      }
+      &:focus {
+        color: #f96332;
+        text-decoration: none;
+
+      }
+    }
+    .h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .h3 {
+      font-size: 1.825em;
+      margin-bottom: 30px;
+      line-height: 1.4em;
+    }
+    .h4 {
+      font-size: 1.5em;
+      line-height: 1.45em;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    h4+.category {
+      margin-top: -5px;
+    }
+    h4.title+.category {
+      margin-top: -5px;
+    }
+    .h4+.category {
+      margin-top: -5px;
+    }
+    .h4.title+.category {
+      margin-top: -5px;
+    }
+    .h5 {
+      font-size: 1.3em;
+      line-height: 1.4em;
+      margin-bottom: 15px;
+    }
+    h5.category {
+      font-weight: 400;
+    }
+    .h5.category {
+      font-weight: 400;
+    }
+    p {
+      line-height: 1.61em;
+      font-weight: 300;
+      font-size: 25px;
+    }
+    .title {
+      font-weight: 700;
+      padding-top: 30px;
+    }
+    .title+.category {
+      margin-top: -25px;
+    }
+    .description {
+      color: #9A9A9A;
+      font-weight: 300;
+    }
+    .category {
+      text-transform: capitalize;
+      font-weight: 700;
+      color: #9A9A9A;
+    }
+    body {
+      color: #2c2c2c;
+      font-size: 14px;
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 1px;
+    }
+    .img-raised {
+      box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
     }
     .page-header {
       min-height: 550px;
@@ -343,4 +464,7 @@ s  button {
   color: white;
   background-color: grey;
   width: 100%;
+}
+.container2 {
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
 }
