@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :skills, only: [:index, :new, :create, :update, :show, :destroy, :edit] do
     resources :bookings, only: [:new, :create, :update, :destroy, :edit, :show, :index] do
-       resources :reviews, only: [:index, :new, :create,]
+       resources :reviews, only: [:index, :new, :create, :show]
     end
   end
 

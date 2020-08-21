@@ -11,17 +11,20 @@ class BookingsController < ApplicationController
         authorize @booking
     end
 
-      def create
-        @booking = Booking.new(params_bookings)
-        @booking.skill = Skill.find(params[:skill_id])
-        @booking.user = current_user
-        authorize @booking
-        if @booking.save
-              redirect_to skill_bookings_path
-          else
-            # render 'new'
-          end
-        end
+
+    def create
+      @booking = Booking.new(params_bookings)
+      @booking.skill = Skill.find(params[:skill_id])
+      @booking.user = current_user
+      authorize @booking
+      if @booking.save
+        redirect_to skill_bookings_path
+      else
+        @skill = @booking.skill
+        render 'skills/show'
+      end
+    end
+
 
 
       def show

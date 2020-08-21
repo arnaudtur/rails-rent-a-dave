@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
   validates :status, presence: true
   validate :end_date_after_start_date
+  validate :available_date
 
   private
 
@@ -17,4 +18,12 @@ class Booking < ApplicationRecord
     end
   end
 
+  def available_date
+    skill.bookings.each do |confirmed_booking|
+      unless (start_date <= confirmed_booking.start_date && end_date <= confirmed_booking.start_date) ||
+        (start_date >= confirmed_booking.end_date && end_date >= confirmed_booking.end_date)
+        errors.add(:start_date, "not available")
+      end
+    end
+  end
 end

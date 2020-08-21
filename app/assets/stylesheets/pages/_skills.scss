@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 7px solid #204051;
   }
   .hero__content {
       max-width: 650px;
@@ -55,3 +56,14 @@
     }
   }
 }
+
+.fond {
+  background-color: #e4e3e3;
+  color: grey;
+}
+
+.number {
+  color: #231E39;
+}
+
+
