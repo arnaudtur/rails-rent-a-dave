@@ -15,14 +15,14 @@
             <span id="banner-typed-text"></span>
           </p>
               <div class="container">
-    
+
 <%= form_tag skills_path, method: :get do %>
   <%= text_field_tag :name,
     params[:name],
     class: "form-control",
     placeholder: "Dave.where(Skill==search)"
   %>
-<%= submit_tag "Skilled_Dave(s).search", class:"btn btn-secondary btn-search" %>
+<%= submit_tag "Skilled_Dave(s).search", class:"btn btn-primary btn-search" %>
 <% end %>
 
 
@@ -30,6 +30,7 @@
 </section>
 </div>
 
+  <div class="row fond">
     <div class="ml-5">
       <h4 class="text-align">
         More than
@@ -37,15 +38,16 @@
               <% @skills.each do |skill| %>
                 <%cards_count += 1 %>
                 <%end%>
-                <%=  cards_count%> skills available from our Daves
+               <strong class="display-4 number"><%=  cards_count%></strong> skills available from our Daves
 
       </h4>
     </div>
-      <div class="container-list">
 
+    <div class="container-list">
 
-  <%= render partial: "cards", locals: {skills: @skills} %>
+       <%= render partial: "cards", locals: {skills: @skills} %>
 
+    </div>
   </div>
   </body>
 </html>
