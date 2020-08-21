@@ -1,16 +1,30 @@
-<h1>Here is the booking</h1>
-  <div class="card-container1">
-    <h6>user_id: <%= @booking.user_id %></h6>
-
-
- <%= simple_form_for @booking, url: skill_booking_path(@skill, @booking), method: :put do |f| %>
-    <%= f.input :status, collection: Booking::STATUS %>
-    <%= f.button :submit, style:"color:white"%>
-  <% end %>
-
-    <p>Start date: <%= @booking.start_date%></p>
-    <p>End date: <%= @booking.end_date %></p>
-    <p>Price: <%= @booking.skill.price %></p>
-    <p>Language: <%= @booking.skill.name %></p>
+<div id="booking2" class="section">
+  <div class="section-center">
+    <div class="text-center" style="padding-top: 50px;">
+    </div>
+    <div class="container" style="padding-top: 100px;">
+      <div class="row">
+        <div class="col-md-7 col-md-push-5">
+          <div class="booking-cta">
+            <h1>Edit Your booking</h1>
+            <div class="card text-center">
+              <div class="card-header">
+                   <%= simple_form_for @booking, url: skill_booking_path(@skill, @booking), method: :put do |f| %>
+                      <%= f.input :status, collection: Booking::STATUS %>
+                      <%= f.button :submit, class: "btn btn-primary"%>
+                    <% end %>
+                    <br>
+                    <br>
+                    <div class="card-body2">
+                      <p style="color:black;">Start date: <%= @booking.start_date.time.strftime("%d/%m/%Y")%>  ||   End date: <%= @booking.end_date.time.strftime("%d/%m/%Y") %></p>
+                      <h3 style="color:black;">Daily Price: <%= @booking.skill.price %>$</h3>
+                    </div>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
