@@ -13,14 +13,6 @@
         <h3 class="title"><%= @user.name%></h3>
         <div class="content">
           <div class="social-description">
-            <h2>0</h2>
-            <p>Missions</p>
-          </div>
-          <div class="social-description">
-            <h2>0</h2>
-            <p>Reviews</p>
-          </div>
-          <div class="social-description">
             <h2><% skill_counter = 0 %>
                 <% offer_counter = 0 %>
                 <% current_user.skills.each do |number|%>
@@ -31,7 +23,7 @@
                 <%end%>
                 <%= skill_counter %>
              </h2>
-            <p>Work offers</p>
+            <p>Skills</p>
           </div>
           <div class="social-description">
             <h2><%=offer_counter%></h2>
@@ -43,7 +35,7 @@
 
 <div class="container">
         <div class="row">
-          <div class="col-md-6 ml-auto mr-auto">
+          <div class="col-md-6 ml-auto mr-auto", style="display:flex;">
             <h4 class="title text-center"><%= link_to "New Skill to Offer",  new_skill_path, class:"btn btn-primary" %></h4>
             <h4 class="title text-center"><%= link_to "Review all my bookings",  user_bookings_path(@user.id), class:"btn btn-primary" %></h4>
             <div class="nav-align-center">

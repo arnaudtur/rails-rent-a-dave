@@ -4,12 +4,12 @@
      </div>
      <div class="logo">
         <% if !user_signed_in? %>
-          <%= link_to root_path, class: "navbar-brand" do %>
-            Rent a Dave
-          <% end %>
+          <%= link_to skills_path, class: "navbar-brand" do %>
+            Browse skills
+            <% end %>
         <% else %>
-          <%= link_to users_path, class: "navbar-brand" do %>
-            Rent a Dave
+          <%= link_to skills_path, class: "navbar-brand" do %>
+            Browse skills
           <% end %>
         <% end %>
      </div>
@@ -24,7 +24,7 @@
           <% elsif user_signed_in? %>
             <li class="nav-item active">
               <div class="d-flex flex-row-reverse">
-                <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
+                <%= link_to 'Profile', user_path(current_user.id), class:"nav-link" %>
               </div>
             </li>
             <li class="nav-item">
