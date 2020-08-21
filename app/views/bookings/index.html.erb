@@ -1,35 +1,42 @@
+<div class="wrapperB">
+  <div class="container justify-content-center">
+    <h2 class="text-center">Bookings</h2>
 
-<h4>Bookings</h4>
+    <% @bookings.each do |booking| %>
+      <%if booking.user_id == params[:user_id].to_i%>
+      <div class="card text-center">
+        <div class="card-header">
+          <h6>Status: <%= booking.status %></h6>
+        </div>
+        <div class="card-body">
+          <p>Start date: <%= booking.start_date.time.strftime("%d/%m/%Y") %></p>
+          <p>End date: <%= booking.end_date.time.strftime("%d/%m/%Y") %></p>
+          <p>Price: <%= booking.skill.price %> $</p>
+          <p>Language: <%= booking.skill.name %></p>
+          <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+        </div>
+      </div>
+        <%else%>
+        <%end%>
+      <% end %>
 
-<% @bookings.each do |booking| %>
-  <%if booking.user_id == params[:user_id].to_i%>
-  <div class="card">
-  <div class="card-body">
-    <h6>Status: <%= booking.status %></h6>
-    <p>Start date: <%= booking.start_date%></p>
-    <p>End date: <%= booking.end_date %></p>
-    <p>Price: <%= booking.skill.price %></p>
-    <p>Language: <%= booking.skill.name %></p>
-  <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+
+    <% @bookings.each do |booking| %>
+      <%if booking.skill_id == params[:skill_id].to_i%>
+      <div class="card text-center mt-4">
+        <div class="card-header">
+          <h6>Status: <%= booking.status %></h6>
+        </div>
+        <div class="card-body">
+          <p>Start date: <%= booking.start_date.time.strftime("%d/%m/%Y") %></p>
+          <p>End date: <%= booking.end_date.time.strftime("%d/%m/%Y")  %></p>
+          <p>Price: <%= booking.skill.price %> $</p>
+          <p>Language: <%= booking.skill.name %></p>
+          <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+        </div>
+    </div>
+        <%else%>
+        <%end%>
+    <% end %>
   </div>
 </div>
-    <%else%>
-    <%end%>
-<% end %>
-
-
-<% @bookings.each do |booking| %>
-  <%if booking.skill_id == params[:skill_id].to_i%>
-  <div class="card">
-  <div class="card-body">
-    <h6>Status: <%= booking.status %></h6>
-    <p>Start date: <%= booking.start_date%></p>
-    <p>End date: <%= booking.end_date %></p>
-    <p>Price: <%= booking.skill.price %></p>
-    <p>Language: <%= booking.skill.name %></p>
-  <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
-  </div>
-</div>
-    <%else%>
-    <%end%>
-<% end %>
