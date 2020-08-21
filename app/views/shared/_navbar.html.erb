@@ -1,40 +1,40 @@
 <nav>
-               <div class="menu-icon">
-                  <i class="fa fa-bars fa-2x"></i>
-               </div>
-               <div class="logo">
-                  <% if !user_signed_in? %>
-                    <%= link_to root_path, class: "navbar-brand" do %>
-                      Rent a Dave
-                    <% end %>
-                  <% else %>
-                    <%= link_to users_path, class: "navbar-brand" do %>
-                      Rent a Dave
-                    <% end %>
-                  <% end %>
-               </div>
-               <div class="menu">
-                  <ul>
-                    <% if !user_signed_in? %>
-                     <li class="nav-item active">
-                        <div class="d-flex flex-row-reverse">
-                          <%= link_to 'Sign-in', user_session_path, class: "nav-link" %>
-                        </div>
-                      </li>
-                    <% elsif user_signed_in? %>
-                      <li class="nav-item active">
-                        <div class="d-flex flex-row-reverse">
-                          <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
-                        </div>
-                      </li>
-                      <li class="nav-item">
-                        <%= link_to "Log out", destroy_user_session_path, method: :delete%>
-                      </li>
-                    <% else %>
-                      <li class="nav-item">
-                        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                      </li>
-                    <% end %>
-                  </ul>
-               </div>
-            </nav>
+     <div class="menu-icon">
+        <i class="fa fa-bars fa-2x"></i>
+     </div>
+     <div class="logo">
+        <% if !user_signed_in? %>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            Rent a Dave
+          <% end %>
+        <% else %>
+          <%= link_to users_path, class: "navbar-brand" do %>
+            Rent a Dave
+          <% end %>
+        <% end %>
+     </div>
+     <div class="menu">
+        <ul>
+          <% if !user_signed_in? %>
+           <li class="nav-item active">
+              <div class="d-flex flex-row-reverse">
+                <%= link_to 'Sign-in', user_session_path, class: "nav-link" %>
+              </div>
+            </li>
+          <% elsif user_signed_in? %>
+            <li class="nav-item active">
+              <div class="d-flex flex-row-reverse">
+                <%= link_to 'Browse skills', skills_path, class:"nav-link" %>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, method: :delete%>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+     </div>
+</nav>

@@ -5,7 +5,7 @@
 
 <body class="profile-page sidebar-collapse">
 <% if @user == current_user %>
-<div class="wrapper"  style="background-image: url('https://www.terdav.com/Content/img/HC/LR_V5/Activite_Environnement/96.jpg")>
+<div class="wrapper"  style="background-image: url('https://images.unsplash.com/photo-1433838552652-f9a46b332c40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")>
       <div class="container">
         <div class="photo-container">
           <img src=https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fmultiupload_du_21_novembre_2012.2Fdave.2F2036955-1-fre-FR.2Fdave.2Ejpg/480x480/quality/80/dave-regle-ses-comptes-avec-christophe-hondelatte.jpg alt="">
@@ -28,13 +28,13 @@
                 <%end%>
                 <% current_user.bookings.each do |booking|%>
                 <% offer_counter += 1 %>
-                <%end%>   
+                <%end%>
                 <%= skill_counter %>
              </h2>
             <p>Work offers</p>
           </div>
           <div class="social-description">
-            <h2><%=offer_counter%></h2> 
+            <h2><%=offer_counter%></h2>
             <p>Bookings</p>
           </div>
         </div>
@@ -103,7 +103,7 @@
                 <%end%>
                 <% @user.bookings.each do |booking|%>
                 <% offer_counter += 1 %>
-                <%end%>  
+                <%end%>
                 <%= skill_counter %>
              </h2>
             <p>Skills to offer</p>
