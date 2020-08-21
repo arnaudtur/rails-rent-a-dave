@@ -13,8 +13,10 @@
               <% end %>
               <h2><%= price = (@skill.price)%>$ / Day</h2>
               <h2></h2>
-
-
+<% @skill.reviews.each do |review| %>
+<h6>"<%= review.content %>"</h6>
+<%= "⭐️"*review.rating %>
+<%end%>
 
             </div>
           </div>
