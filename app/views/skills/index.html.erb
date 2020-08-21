@@ -30,16 +30,18 @@
 </section>
 </div>
 
-  <div class="row fond">
+<div class="row fond">
     <div class="ml-5">
       <h4 class="text-align">
         More than
               <% cards_count = 0 %>
               <% @skills.each do |skill| %>
+              <%if skill.user_id == current_user.id %>
+              <%else%>
                 <%cards_count += 1 %>
                 <%end%>
+                <%end%>
                <strong class="display-4 number"><%=  cards_count%></strong> skills available from our Daves
-
       </h4>
     </div>
 
