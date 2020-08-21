@@ -12,11 +12,6 @@
               <h3>Average rating : <%= "⭐️"*(@skill.average_rating / @skill.bookings.length) %> after <%= @skill.bookings.length %> missions</h3>
               <% end %>
               <h2><%= price = (@skill.price)%>$ / Day</h2>
-              <h2></h2>
-<% @skill.reviews.each do |review| %>
-<h6>"<%= review.content %>"</h6>
-<%= "⭐️"*review.rating %>
-<%end%>
 
             </div>
           </div>
@@ -37,7 +32,17 @@
         </div>
       </div>
     </div>
-  </div>
+    <div class="review">
+      <ul class="list-inline justify-content-center">
+      <% @skill.reviews.each do |review| %>
+          <li class="list-inline-item ml-5">
+              <h4 style="color: white;">"<%= review.content %>"</h4>
+              <%= "⭐️"*review.rating %>
+          <%end%>
+          </li>
+      </ul>
+    </div>
+</div>
 
 
 
