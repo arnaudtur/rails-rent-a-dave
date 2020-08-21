@@ -27,13 +27,18 @@
     top: 0;
     background: rgba(0, 0, 0, 0.6);
   }
+  .review {
+    position: relative;
+    top: 60%;
+    left: 50;
+    display: flex;
+    justify-content: center;
+  }
 }
 .btn.button_add{
   color: white;
 }
-.string.required {
-  color: white;
-}
+
 .booking-form {
   background-color: #fff;
   padding: 50px 20px;
