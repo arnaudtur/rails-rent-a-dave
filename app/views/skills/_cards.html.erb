@@ -1,9 +1,15 @@
 <% skills.each do |skill| %>
+<% if skill.user_id == current_user.id %>
+<% else %>
   <div class="card-container">
     <%= link_to skill_path(skill) do%>
     <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
     <h3><%=skill.name%></h3>
-    <h6>⭐⭐⭐⭐⭐</h6>
+    <% if skill.reviews.length != 0 %>
+    <%= "⭐️"*(skill.average_rating / skill.bookings.length) %>
+    <% else %>
+    <%= "New Dave" %>
+    <% end%>
     <h6>By <%=User.find(skill.user_id).name%></h6>
     <p><%= skill.price %><span>$</span></p>
     <div class="buttons">
@@ -13,4 +19,5 @@
     </div>
     <% end %>
   </div>
+  <% end %>
 <% end %>
