@@ -1,0 +1,16 @@
+<h1>Here is the booking</h1>
+  <div class="card-container1">
+    <h6>user_id: <%= @booking.user_id %></h6>
+
+
+ <%= simple_form_for @booking, url: skill_booking_path(@skill, @booking), method: :put do |f| %>
+    <%= f.input :status, collection: Booking::STATUS %>
+    <%= f.button :submit, style:"color:white"%>
+  <% end %>
+
+    <p>Start date: <%= @booking.start_date%></p>
+    <p>End date: <%= @booking.end_date %></p>
+    <p>Price: <%= @booking.skill.price %></p>
+    <p>Language: <%= @booking.skill.name %></p>
+  </div>
+</div>

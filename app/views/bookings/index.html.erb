@@ -10,7 +10,7 @@
     <p>End date: <%= booking.end_date %></p>
     <p>Price: <%= booking.skill.price %></p>
     <p>Language: <%= booking.skill.name %></p>
-  <%= link_to "Add a review",  new_skill_booking_review_path(booking.skill, booking), class:"btn btn-primary" %>
+  <%= link_to "View Booking",  edit_skill_booking_path(booking.skill.id,booking.id), class:"btn btn-primary" %>
   </div>
 </div>
     <%else%>

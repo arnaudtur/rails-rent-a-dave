@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
 
       def edit
         @booking = Booking.find(params[:id])
+        @skill = Skill.find(params[:skill_id])
         authorize @booking
       end
 
@@ -53,7 +54,7 @@ class BookingsController < ApplicationController
         authorize @booking
 
         # no need for app/views/restaurants/update.html.erb
-        redirect_to skill_path(@skill)
+        redirect_to skill_bookings_path
       end
 
 

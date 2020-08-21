@@ -14,6 +14,7 @@
         </div>
         <div class ="row boxs justify-content-center mt-4 mb-2">
         <h3 class="title"><%= @user.name%></h3>
+
         </div>
 
 
@@ -47,7 +48,7 @@
                 <%end%>
                 <%= skill_counter %>
              </h2>
-            <p>Work offers</p>
+            <p>Skills</p>
           </div>
 
           </div>
@@ -63,9 +64,15 @@
       </div>
     </div>
 
-    <div class="row buttons justify-content-center">
-            <h4 class="title text-center"><%= link_to "New Skill to Offer",  new_skill_path, class:"btn2 btn-primary" %></h4>
-            <h4 class="title text-center"><%= link_to "Review all my bookings",  user_bookings_path(@user.id), class:"btn2 btn-primary" %></h4>
+
+<div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto", style="display:flex;">
+            <h4 class="title text-center"><%= link_to "New Skill to Offer",  new_skill_path, class:"btn btn-primary" %></h4>
+            <h4 class="title text-center"><%= link_to "Review all my bookings",  user_bookings_path(@user.id), class:"btn btn-primary" %></h4>
+            <div class="nav-align-center">
+            </div>
+
           </div>
     </div>
 
