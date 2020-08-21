@@ -40,14 +40,14 @@
               <%else%>
                 <%cards_count += 1 %>
                 <%end%>
-<%end%>
-               <strong class="display-3 number"><%=  cards_count%></strong> skills available from our Daves
+              <%end%>
+               <strong class="display-3"><%=  cards_count%></strong> skills available from our Daves
 
 
       </h4>
     </div>
 
-    <div class="container-list">
+    <div class="container-list d-flex flex-wrap">
 
        <%= render partial: "cards", locals: {skills: @skills} %>
 
