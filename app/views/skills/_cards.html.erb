@@ -3,7 +3,9 @@
 <% else %>
   <div class="card-container">
     <%= link_to skill_path(skill) do%>
-    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+    <%= cl_image_tag skill.user.photo.key, class:"round"%>
+
+
     <h3><%=skill.name%></h3>
     <% if skill.reviews.length != 0 %>
     <%= "⭐️"*(skill.average_rating / skill.bookings.length) %>
