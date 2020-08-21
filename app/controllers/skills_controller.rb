@@ -23,7 +23,7 @@ class SkillsController < ApplicationController
     @skill.user = @user
     authorize @skill
     if @skill.save
-      redirect_to @skill
+      redirect_to user_path(current_user.id)
     else
       render :index
     end

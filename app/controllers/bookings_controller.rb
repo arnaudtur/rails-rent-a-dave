@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       authorize @booking
       if @booking.save
-        redirect_to skill_bookings_path
+        redirect_to user_path(current_user.id)
       else
         @skill = @booking.skill
         render 'skills/show'
@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
         authorize @booking
 
         # no need for app/views/restaurants/update.html.erb
-        redirect_to skill_bookings_path
+        redirect_to user_path(current_user.id)
       end
 
 
