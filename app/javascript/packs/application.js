@@ -23,6 +23,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr"
 import { loadDynamicBannerText } from '../components/banner';
 import { fullPrice } from '../components/full_price';
 document.addEventListener('turbolinks:load', () => {

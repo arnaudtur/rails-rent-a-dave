@@ -1,5 +1,5 @@
 <h1>BIENVENU<h1>
-​<%= simple_form_for @booking, url: skill_bookings_path(@skill), method: :post do |f| %>
+​<%= simple_form_for @booking @offer, url: skill_bookings_path(@skill), method: :post do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
     <div class="form-actions d-flex justify-content-center">

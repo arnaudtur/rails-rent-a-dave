@@ -9,7 +9,9 @@
           <h6>Status: <%= booking.status %></h6>
         </div>
         <div class="card-body">
-          <p>Start date: <%= booking.start_date.time.strftime("%d/%m/%Y") %></p>
+          <p>Owner of the skill : <%= booking.skill.user.name %></p>
+          <p>People who book the skill (me) : <%= booking.user.name %></p>
+          <p>Startx date: <%= booking.start_date.time.strftime("%d/%m/%Y") %></p>
           <p>End date: <%= booking.end_date.time.strftime("%d/%m/%Y") %></p>
           <p>Price: <%= booking.skill.price %> $</p>
           <p>Language: <%= booking.skill.name %></p>
